@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.boot.projectEx.dao.IProductDAO">
+  	<!--  카테고리별 상품 조회 -->
+  	<select id="listCtgProduct" parameterType="string"
+  				  resultType="com.boot.projectEx.model.ProductVO">
+  		SELECT * FROM product WHERE ctgId=#{ctgId} ORDER BY prdNo		  
+   </select>
+   
+   <!--  상세 상품 정보 조회 -->
+   <select id="detailViewProduct" parameterType="string"
+   				resultType="com.boot.projectEx.model.ProductVO">
+  		SELECT * FROM product WHERE prdNo=#{prdNo}
+   </select>
+   
+  
+  </mapper>

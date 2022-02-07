@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+	  <mapper namespace="com.multi.book.IBookDAO">
+  		<resultMap  id="bookResult" type="com.multi.book.BookVO">
+  			<result property="bookNo" column="bookNo" />
+  			<result property="bookTitle" column="bookTitle" />
+  			<result property="bookAuthor" column="bookAuthor" />
+  			<result property="bookYear" column="bookYear" />
+  			<result property="bookPrice" column="bookPrice" />
+  			<result property="bookPublisher" column="bookPublisher" />	
+  		</resultMap> 
+  		
+		<!-- 전체 도서 조회 -->
+		<select id="listAllBook" resultMap="bookResult">
+  			SELECT * FROM book ORDER BY bookNo
+  		</select>  
+  		
+  		
+  		<!-- 도서 등록 -->
+  		<insert id="insertBook" parameterType="com.multi.book.BookVO">
+  			INSERT INTO book (bookNo, bookTitle, bookAuthor, bookYear, bookPrice, bookPublisher)
+  			VALUES (#{bookNo}, #{bookTitle}, #{bookAuthor}, #{bookYear}, #{bookPrice}, #{bookPublisher})
+  		</insert>  
+  		
+  		<!-- 상품 상세 정보 조회  -->
+  		<select id="detailViewBook" parameterType="string" 
+  									resultType="com.multi.book.BookVO">
+  			SELECT * FROM book WHERE bookNo=#{bookNo}  		
+  		</select>
+  		
+  		<!-- 도서 정보 수정 : 수정된 정보 DB에 저장 (도서번호는 수정 안 함 : 기본키 변경 안 함) -->
+  		<update id="updateBook" parameterType="com.multi.book.BookVO">
+  			UPDATE book SET bookTitle=#{bookTitle}, bookAuthor=#{bookAuthor}, 
+  						  bookYear=#{bookYear}, bookPrice=#{bookPrice}, bookPublisher=#{bookPublisher} 
+  			WHERE bookNo=#{bookNo}
+  		</update>
+  		<!-- 도서 정보 삭제 -->
+  		<delete id="deleteBook" parameterType="string">
+  			DELETE FROM book WHERE bookNo=#{bookNo}
+  		</delete>
+  		
+  		<!-- 도서번호 중복 확인 -->
+  		<select id="bookNoCheck" resultType="string" parameterType="string">
+  			SELECT bookNo FROM book WHERE bookNo=#{bookNo}
+  		</select>
+  		
+  		<!-- 도서 검색  -->
+  		<select id="bookSearch" resultMap="bookResult" parameterType="hashmap">
+  			SELECT * FROM book WHERE
+  			<choose>
+  				<when test="type != null and type.equals('bookTitle')">
+  					bookTitle LIKE CONCAT('%', #{keyword}, '%')
+  				</when>  				
+  				<when test="type != null and type.equals('bookAuthor')">
+  					bookAuthor LIKE CONCAT('%', #{keyword}, '%')
+  				</when>
+  			</choose>
+  		</select>
+  </mapper>

@@ -1,0 +1,583 @@
+@charset "UTF-8";
+
+
+.productSection{
+	display:flex;
+}
+
+#firstSection1{
+	width:45%; 
+	height:600px; 
+	float: left;
+	margin-top: 80px; 
+	margin-right:-50px; 
+	margin-left: 110px;
+}
+
+#firstSection2{
+	width:35%; 
+	height:600px; 
+	float: left;
+	margin-top: 80px; 
+	margin-right:-80px; 
+	margin-left: 60px;
+}
+
+.vl {
+	border-left: 1px solid gray;
+	height: 550px;
+	margin-top: 80px;
+	margin-left: 30px;
+	}
+
+#firstSectionBox{
+	width:auto;
+	height:400px;
+	margin-top:10px;
+	
+}
+
+/* 네비게이션바 */
+#productNav{
+	width:84%;
+	height:50px; 
+	align-items: center; 
+	margin-top: 50px;
+	margin-bottom: 30px;
+	margin-left: 110px;
+	line-height:35px;
+	background-color:#e0d0c0;
+	z-index:20;  /* 스크롤 시 위 오도록 */
+	border-top:solid #cccccc 1px;
+	border-bottom:solid #cccccc 1px;
+}
+#productNav ul{ margin:0;}
+
+#productNav li {
+	float:left;
+	text-align:center;
+	width:25%;
+	height:30px;
+	line-height:45px;
+}
+
+#article3{
+	display: inline-block;
+}
+
+#thirdSection1{
+	width:30%; 
+	height:600px; 
+	margin-right:-50px; 
+	margin-left: 135px;
+	float:left; 
+}
+
+#thirdSection2{
+	width:33%; 
+	height:400px; 
+	margin-left: 860px;
+}
+
+
+#blink{
+	position: absolute;
+	width:100%;
+	height: 300px;
+	margin-top:80px;
+	display: inline-block;
+}
+
+#fourthSection{
+	width:55%; 
+	height:300px; 
+	margin-top: 800px;
+	margin-bottom:0px;
+	margin-right:10px; 
+	margin-left: 110px;
+}
+
+/* 상품정보 */
+#real-input{
+	position: relative;
+    left: 400px;
+}
+.prdBtn{
+	position: relative;
+    left: 8px;
+	height: 35px;
+	width: 100px;
+	background-color: #e0d0c0;
+	border: 2px solid #e0d0c0;
+}
+
+.prdBtn:hover {
+  background-color: #d1a880;
+  color: black;
+  border: 2px solid #d7af86;
+}
+
+
+#save{
+	position: relative;
+    left: 425px;
+	height: 35px;
+	width: 150px;
+	background-color: #e0d0c0;
+	border: 2px solid white;
+}
+
+#save:hover {
+  background-color: #d1a880;
+  color: black;
+  border: 2px solid #d7af86;
+}
+#prdbanner{
+	width:170%; 
+	height:600px; 
+}
+
+/*네비게이션 상품선택 추가*/
+
+
+
+/* 리뷰 */
+.review_textarea::-webkit-scrollbar {
+  width: 10px;
+}
+.review_textarea::-webkit-scrollbar-thumb {
+  background-color: #d1a880;
+  border-radius: 10px;
+}
+.review_textarea::-webkit-scrollbar-track {
+  background-color: #f2dcac;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+/* 제품사진 */
+#show-img{
+	width: 400px;
+	height: 400px;
+}
+
+.show {
+	margin-left:40px;
+	width: 550px;
+	height: 500px;
+}
+
+.small-img {
+	margin: auto 130px;
+	width: 350px;
+	height: 70px;
+	margin-top: 10px;
+ 	position: relative;
+	left: 25px;
+}
+
+.small-img .icon-left, .small-img .icon-right {
+	width: 12px;
+ 	height: 24px;
+ 	cursor: pointer;
+ 	position: absolute;
+ 	top: 0;
+ 	bottom: 0;
+ 	margin: auto 0;
+}
+
+.small-img .icon-left { 
+	transform: rotate(180deg) 
+}
+
+.small-img .icon-right {
+	right: 0; 
+}
+
+.small-img .icon-left:hover, .small-img .icon-right:hover {
+	opacity: .5; 
+}
+
+.small-container {
+  width: 310px;
+  height: 70px;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.small-container div {
+  width: 800%;
+  position: relative;
+}
+
+.small-container .show-small-img {
+  width: 70px;
+  height: 70px;
+  margin-right: 6px;
+  cursor: pointer;
+  float: left;
+}
+
+.small-container .show-small-img:last-of-type {
+	margin-right: 0;
+	 }
+	
+/* 별점 */
+.star {
+    position: relative;
+    font-size: 2rem;
+    color: #ddd;
+  }
+  
+.star input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.star span {
+  width: 0;
+  position: absolute; 
+  left: 0;
+  color: red;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* 리뷰별점 */
+.rating .rate_radio + label {
+    position: relative;
+    display: inline-block;
+    margin-left: -4px;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    background-image: url('/image/starrate.png');
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+.rating .rate_radio:checked + label {
+    background-color: #ff8;
+}
+
+.reviewform textarea{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.rating .rate_radio {
+    position: relative;
+    display: inline-block;
+    z-index: 20;
+    opacity: 0.001;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    cursor: pointer;
+    vertical-align: top;
+    display: none;
+}
+.rating .rate_radio + label {
+    position: relative;
+    display: inline-block;
+    margin-left: -4px;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    background-image: url('/image/starrate.png');
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+.rating .rate_radio:checked + label {
+    background-color: #ffff00;
+}
+
+.warning_msg {
+    display: none;
+    position: relative;
+    text-align: center;
+    background: #ffffff;
+    line-height: 26px;
+    width: 100%;
+    color: red;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+}
+
+#orderBrand {
+	font-size: 23px;
+	justify-content: space-between;
+}
+
+/*상품옵션박스*/
+#firstSectionBox{
+	text-align: center;
+	height: 120px;
+}
+
+#secondSectionBox{
+	height: 50px;
+	margin-top: 500px;
+}
+
+#prdSelect{
+	width: 100%;
+	height: 60px;
+}
+
+#prdSelect2{
+	width: 100%;
+	height: 60px;
+}
+
+#prdPrice{
+	font-weight: bold;
+	font-size: 30px;
+}
+
+#span1{
+	display: block; 
+	text-align: left;  
+	line-height: 0px;
+}
+
+#span2{
+	display: block; 
+	text-align: right;  
+	line-height: 0px;
+
+}
+
+#userName{
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#order{
+	position: relative;
+	margin-bottom: 100px;
+}
+
+#cart{
+	position: relative;
+	
+}
+
+/* 주문버튼 */
+.myButton1 {
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	background-color:#f9f9f9;
+	border-radius:10px;
+	border:4px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:13px 95px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	
+}
+.myButton1:hover {
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	background-color:#e9e9e9;
+}
+.myButton1:active {
+	position:relative;
+	top:1px;
+}
+
+.myButton2 {
+	box-shadow: inset 0px 0px 0px 0px #1c1b18;
+	background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color:#eae0c2;
+	border-radius:10px;
+	border:3px solid #333029;
+	display:inline-block;
+	cursor:pointer;
+	color:#505739;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:13px 95px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	
+}
+.myButton2:hover {
+	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+	background-color:#ccc2a6;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
+}
+
+.myButton3 {
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	background-color:#f9f9f9;
+	border-radius:10px;
+	border:4px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:13px 70px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	
+}
+.myButton3:hover {
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	background-color:#e9e9e9;
+}
+.myButton3:active {
+	position:relative;
+	top:1px;
+}
+
+.myButton4 {
+	box-shadow: inset 0px 0px 0px 0px #1c1b18;
+	background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+	background-color:#eae0c2;
+	border-radius:10px;
+	border:3px solid #333029;
+	display:inline-block;
+	cursor:pointer;
+	color:#505739;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:13px 70px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	
+}
+.myButton4:hover {
+	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+	background-color:#ccc2a6;
+}
+.myButton4:active {
+	position:relative;
+	top:1px;
+}
+
+/* 쿠폰창 */
+.modal-container{
+  width:80%;
+  margin-left:268px;
+}
+.modal-btn-box{
+  width:100%;
+  text-align:center;
+}
+.modal-btn-box button{
+  display:inline-block;
+  width:90px;
+  height:45px;
+  background-color:#ffffff;
+  border:1px solid #e1e1e1;
+  cursor:pointer;
+  padding-top:0px;
+}
+.popup-wrap{
+  background-color:rgba(0,0,0,.3);
+  justify-content:center;
+  align-items:center;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  display:none;
+  padding:15px;
+}
+.popup{
+  width:100%;
+  max-width:400px;
+  background-color:#ffffff;
+  border-radius:10px;
+  overflow:hidden;
+  background-color:#264db5;
+  box-shadow: 5px 10px 10px 1px rgba(0,0,0,.3);
+}
+.popup-head{
+  width:100%;
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.head-title {
+    font-size: 38px;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: -3px;
+    text-align: center;
+}
+.popup-body{
+  width:100%;
+  background-color:#ffffff;
+}
+.body-content{
+  width:100%;
+  padding:30px;
+}
+.body-titlebox{
+  text-align:center;
+  width:100%;
+  height:40px;
+  margin-bottom:10px;
+}
+.body-contentbox{
+  word-break:break-word;
+  overflow-y:auto;
+  min-height:100px;
+  max-height:200px;
+}
+.popup-foot{
+  width:100%;
+  height:50px;
+}
+.pop-btn{
+  display:inline-flex;
+  width:50%;
+  height:100%;
+  float:left;
+  justify-content:center;
+  align-items:center;
+  color:#ffffff;
+  cursor:pointer;
+}
+.pop-btn.confirm{
+  border-right:1px solid #3b5fbf;
+}
+
+/* 주문수량 확인 */
+
+.productBox{
+	width:400px;
+	height:200px;
+	margin-top:60px;
+	border:1px solid #333029;
+}
+
+        
